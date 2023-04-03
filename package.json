@@ -1,0 +1,19 @@
+{
+  "name": "homework-7.6",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "testChrome":"npx cypress run --browser chrome --headless",
+    "testFirefox": "npx cypress run --browser firefox --headless",
+    "testChromeMobile": "npx cypress run -b chrome --env viewportWidth=390,viewportHeight=844",
+    "testFirefoxMobile": "npx cypress run -b firefox --env viewportWidth=390,viewportHeight=844"
+  },
+  "author": "",
+  "license": "ISC",
+  "keywords": [],
+  "description": "",
+  "dependencies": {
+    "cypress": "^12.9.0"
+  }
+}
