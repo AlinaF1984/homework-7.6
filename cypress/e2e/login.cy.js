@@ -54,7 +54,6 @@ describe("login screen", () => {
 
 describe("Tests to check the functionality of working with books in favorites", () => {
   beforeEach(() => {
-    cy.viewport(Cypress.env("viewportWidth"), Cypress.env("viewportHeight"));
     cy.visit("/");
     cy.login("bropet@mail.ru", "123");
   });
@@ -65,12 +64,15 @@ describe("Tests to check the functionality of working with books in favorites", 
   });
 
   it("remove from favorites", () => {
+    cy.contains("Add to favorite").click();
+    cy.contains("Delete from favorite").should("be.visible");
     cy.contains("Delete from favorite").click();
     cy.contains("Add to favorite").should("be.visible");
   });
 
+
   it("Should remove all favorite books", () => {
-    cy.addBook(bookOne );
+    cy.addBook(bookOne);
     cy.addBook(bookTwo);
     cy.removeAllFavorite();
     cy.contains("Please add some book to favorit on home page!").should(

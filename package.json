@@ -3,11 +3,11 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "testChrome":"npx cypress run --browser chrome --headless",
-    "testFirefox": "npx cypress run --browser firefox --headless",
-    "testChromeMobile": "npx cypress run -b chrome --env viewportWidth=390,viewportHeight=844",
-    "testFirefoxMobile": "npx cypress run -b firefox --env viewportWidth=390,viewportHeight=844"
+    "test": "cypress run",
+    "cy:Laptop:headless": "npx cypress run -b chrome -C cypress.config.js",
+    "cy:laptop:headed": "npx cypress run -b firefox --headed -C cypress.config.js",
+    "cy:mobile:headless": "npx cypress run -b edge -C cypress2.config.js",
+    "cy:mobile:headed": "npx cypress run -b chrome --headed -C cypress2.config.js"
   },
   "author": "",
   "license": "ISC",
