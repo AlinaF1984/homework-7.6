@@ -56,11 +56,7 @@ describe("Tests to check the functionality of working with books in favorites", 
   beforeEach(() => {
     cy.visit("/");
     cy.login("bropet@mail.ru", "123");
-  });
-
-  it("add to favorites", () => {
-    cy.contains("Add to favorite").click();
-    cy.contains("Delete from favorite").should("be.visible");
+    cy.addBook(bookOne,bookTwo,bookThree);
   });
 
   it("remove from favorites", () => {
@@ -70,6 +66,10 @@ describe("Tests to check the functionality of working with books in favorites", 
     cy.contains("Add to favorite").should("be.visible");
   });
 
+  it("add to favorites", () => {
+    cy.contains("Add to favorite").click();
+    cy.contains("Delete from favorite").should("be.visible");
+  });
 
   it("Should remove all favorite books", () => {
     cy.addBook(bookOne);
